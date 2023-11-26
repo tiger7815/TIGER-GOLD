@@ -35,7 +35,7 @@ bot = Client(
       api_hash=api_hash, 
       bot_token=bot_token)
 auth_users = [
-    int(chat) for chat in os.environ.get("AUTH_USERS", 5987970971).split(",") if chat != '']
+    int(chat) for chat in os.environ.get("AUTH_USERS", "5987970971").split(",") if chat != '']
 
 @bot.on_message(filters.command(["start"])  & ~filters.edited)
 async def account_login(bot: Client, m: Message):
